@@ -60,7 +60,7 @@
 
 		    formData.append('file', imgBlob);
 
-			$http.post('./api/upload_image.php', formData, {
+			$http.post('http://web2.mnrh.com/api/upload_image.php', formData, {
 				transformRequest: angular.identity,
 				headers: {
 					'Content-Type': undefined
