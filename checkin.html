@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Check In</title>
+	<!-- CSS Bootstrap -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<!-- CSS Social Icon Strip Footer -->
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+	<script type="text/javascript" src="app/js/main.js"></script>
+</head>
+<body ng-app="checkin">
+	<div class="container-fluid" ng-controller="formController">
+		<div class="row">
+			<div class="col-md-12" data-ng-init="cameraStart()">
+				<h1>{{ test }}</h1>
+				
+				<form action="" method="post" enctype="multipart/form-data" class="form-inline">
+					<div class="row" style="text-align: center;">
+						<div class="col-md-12">
+							<video id="camera"  width="640" height="480" style="border: 1px solid #000;" autoplay="autoplay" controls></video>
+						</div>
+
+						<div class="col-md-12"">
+							<input type="file" id="photo" accept="image/*" capture="camera" fileread="uploadImage" class="form-control">
+
+							<button class="btn btn-primary" ng-click="drawOnCanvas($event)">Take a photo</button>
+							<button class="btn btn-primary" ng-click="uploadFileToServer($event)">Upload</button>
+						</div>
+
+						<!-- <div id="drawer" class="col-md-12"">
+
+						</div> -->
+
+						<div class="col-md-12"">
+							<img src="" id="displayImage" />
+						</div>
+					</div>
+
+					{{ uploadImage }}
+				</form>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
